@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
+import moment from 'moment';
 
 //references for components
 import TodoAPI from '../API/TodoAPI'
@@ -40,6 +41,7 @@ export default class Todo extends React.Component {
         {
           id: uuid(),
           text: newTodo,
+          completedTime: null,
           isCompleted: false
         }
       ]
@@ -47,9 +49,11 @@ export default class Todo extends React.Component {
     })
   }
   handleToggle(id) {
+    let now = moment().format('MMMM Do YYYY, h:mm:ss a');
     let updatedTodos = this.state.todos.map((todo)=>{
       if(todo.id === id ) {
         todo.isCompleted = !todo.isCompleted;
+        todo.completedTime = now;
       }
       return todo;
     })
@@ -60,7 +64,7 @@ export default class Todo extends React.Component {
     let filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
     return(
       <div>
-      <h3>{this.state.accountName}'s Todos'</h3>
+      <h3 className="page-title">Todo App</h3>
         <TodoSearch todoSearch = {this.todoSearch}/>
         <TodoList todos={filteredTodos} toggleCompleted = {this.handleToggle}/>
         <AddTodo addNewTodo={this.addNewTodo}/>
