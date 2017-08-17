@@ -11,8 +11,8 @@ class TodoSearch extends React.Component {
   render() {
     return (
       <div>
-        <input type="search" ref={(input) => {this.searchText = input}} onChange = {this.handleSearch.bind(this)}  className = "form-control" placeholder="Please Enter your Todo"/>
-         <label><input ref={(input) => {this.isChecked=input}} type = "checkbox" />Show Completed</label>
+        <input type="search" ref={(input) => {this.searchText = input}} onChange = {this.handleSearch.bind(this)}  className = "form-control" placeholder="Please Enter Your Todo To Search"/>
+        <label><input onChange={this.handleSearch.bind(this)} ref={(input) => {this.isChecked=input}} type = "checkbox" />Show Completed</label>
       </div>
     );
   }

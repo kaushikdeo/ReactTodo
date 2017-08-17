@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 
 module.exports = {
   setTodos :function(todos){
@@ -26,4 +25,26 @@ module.exports = {
       return [];
     }
    },
+   filterTodos: function(todos, showCompleted,  searchText) {
+     let filteredTodos = todos;
+     //filter by showCompleted
+     filteredTodos = filteredTodos.filter((todo)=>{
+       return !todo.isCompleted || showCompleted;
+     });
+     //filter by searchText
+
+     //sort todos with noncompleted first
+     filteredTodos.sort((a,b)=>{
+       if (a.isCompleted === false && b.isCompleted === true) {
+         return -1;
+       }
+       else if (a.isCompleted === true && b.isCompleted === false){
+         return 1;
+       }
+       else {
+         return 0;
+       }
+     });
+     return filteredTodos;
+   }
 }

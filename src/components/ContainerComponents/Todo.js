@@ -56,11 +56,13 @@ export default class Todo extends React.Component {
     this.setState ({todos: updatedTodos})
   }
   render() {
+    let {todos, showCompleted, searchText} = this.state;
+    let filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
     return(
       <div>
       <h3>{this.state.accountName}'s Todos'</h3>
         <TodoSearch todoSearch = {this.todoSearch}/>
-        <TodoList todos={this.state.todos} toggleCompleted = {this.handleToggle}/>
+        <TodoList todos={filteredTodos} toggleCompleted = {this.handleToggle}/>
         <AddTodo addNewTodo={this.addNewTodo}/>
       </div>
     );
