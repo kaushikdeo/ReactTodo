@@ -17,7 +17,7 @@ class Todos extends React.Component {
         <div onClick={()=>{
             this.props.toggleCompleted(id)
           }}>
-        <p><label><input checked={isCompleted} type = "checkbox" /> </label> . <strike><b>{text}</b></strike> </p>
+        <p><label><input checked={isCompleted} type = "checkbox" /> </label> .<b>{text}</b></p>
         </div>
       );
     }
