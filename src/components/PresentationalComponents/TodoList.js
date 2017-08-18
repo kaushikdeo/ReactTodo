@@ -14,8 +14,10 @@ class TodoList extends React.Component {
     }
     return(
       <div>
-        <h2> Todo List </h2>
+        <h2 className="text-center"> Your Todo List </h2>
+        <hr />
         {renderTodos()}
+        <hr />
       </div>
     );
   }

@@ -20,12 +20,12 @@ class AddTodo extends React.Component {
   }
   render() {
     return(
-      <div>
+      <div className="form-group addcomp">
       <form ref={(input) => {this.addNewTodoForm = input}}>
-        <input type="text" ref={(input) => {this.todoText=input}} className = "form-control"placeholder="What do you want to do today?"/>
+        <input type="text" ref={(input) => {this.todoText=input}} className = "form-control" placeholder="What do you want to do today?"/>
         <br />
-        <button onClick={this.onFormSubmit.bind(this)}>Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button onClick={this.onFormReset.bind(this)}>Reset</button>
+        <button type="button" className="btn btn-success" onClick={this.onFormSubmit.bind(this)}>Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button className="btn btn-warning" onClick={this.onFormReset.bind(this)}>Reset</button>
       </form>
       </div>
     );
