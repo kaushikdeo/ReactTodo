@@ -68,6 +68,7 @@ export default class Todo extends React.Component {
         <TodoSearch todoSearch = {this.todoSearch}/>
         <TodoList todos={filteredTodos} toggleCompleted = {this.handleToggle}/>
         <AddTodo addNewTodo={this.addNewTodo}/>
+        <p>Created by Kaushik Deo. Git Repository : <a href="https://github.com/kaushikdeo/ReactTodo"> Go To GitHub </a></p>
       </div>
     );
   }
