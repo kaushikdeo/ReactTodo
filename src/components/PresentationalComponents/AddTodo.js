@@ -24,7 +24,7 @@ class AddTodo extends React.Component {
       <form onSubmit={this.onFormSubmit} ref={(input) => {this.addNewTodoForm = input}}>
         <input type="text" ref={(input) => {this.todoText=input}} className = "form-control" placeholder="What do you want to do today?"/>
         <br />
-        <button type="button" className="btn btn-success">Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" className="btn btn-success">Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </form>
       </div>
     );
