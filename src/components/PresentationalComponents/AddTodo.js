@@ -3,6 +3,10 @@ import React from 'react';
 import moment from 'moment';
 
 class AddTodo extends React.Component {
+  constructor(){
+    super();
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
   onFormSubmit(e) {
     e.preventDefault();
     if(this.todoText.value.length > 0){
@@ -14,18 +18,13 @@ class AddTodo extends React.Component {
       this.refs.todoText.focus();
     }
   }
-  onFormReset(e) {
-    e.preventDefault();
-    this.addNewTodoForm.reset();
-  }
   render() {
     return(
-      <div className="form-group addcomp">
-      <form ref={(input) => {this.addNewTodoForm = input}}>
+      <div className="form-group">
+      <form onSubmit={this.onFormSubmit} ref={(input) => {this.addNewTodoForm = input}}>
         <input type="text" ref={(input) => {this.todoText=input}} className = "form-control" placeholder="What do you want to do today?"/>
         <br />
-        <button type="button" className="btn btn-success" onClick={this.onFormSubmit.bind(this)}>Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button className="btn btn-warning" onClick={this.onFormReset.bind(this)}>Reset</button>
+        <button type="button" className="btn btn-success">Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </form>
       </div>
     );
