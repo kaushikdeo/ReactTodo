@@ -13,11 +13,10 @@ class TodoList extends React.Component {
       })
     }
     return(
-      <div>
-        <h2 className="text-center"> Your Todo List </h2>
+      <div className="form-group searchcomp">
+        <h3 className="text-center"> Your Todo List </h3>
         <hr />
         {renderTodos()}
-        <hr />
       </div>
     );
   }

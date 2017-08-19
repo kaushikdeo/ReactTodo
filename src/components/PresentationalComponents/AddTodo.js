@@ -1,5 +1,4 @@
 import React from 'react';
-
 import moment from 'moment';
 
 class AddTodo extends React.Component {
@@ -15,12 +14,12 @@ class AddTodo extends React.Component {
     }
     else{
       alert('please input valid text before adding new todo');
-      this.refs.todoText.focus();
+      this.todoText.focus();
     }
   }
   render() {
     return(
-      <div className="form-group">
+      <div className="form-group searchcomp">
       <form onSubmit={this.onFormSubmit} ref={(input) => {this.addNewTodoForm = input}}>
         <input type="text" ref={(input) => {this.todoText=input}} className = "form-control" placeholder="What do you want to do today?"/>
         <br />
