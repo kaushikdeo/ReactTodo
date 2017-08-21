@@ -11,7 +11,7 @@ class Todos extends React.Component {
     }
     if (isCompleted === false) {
       return (
-        <div onClick={()=>{
+        <div className="notcompleted" onClick={()=>{
             this.props.toggleCompleted(id)
           }}>
         <label><input checked={isCompleted} type = "checkbox" /></label> . <b>{text}</b>
@@ -22,7 +22,7 @@ class Todos extends React.Component {
     }
     else {
       return (
-        <div onClick={()=>{
+        <div className="completed" onClick={()=>{
             this.props.toggleCompleted(id)
           }}>
         <p><label><input checked={isCompleted} type = "checkbox" /> </label> .<b>{text}</b></p>
