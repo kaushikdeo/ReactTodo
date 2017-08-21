@@ -37,7 +37,8 @@ export default class Todo extends React.Component {
         ...this.state.todos, {
           id: uuid(),
           text: newTodo,
-          completedTime: selectedDate.format('MMMM Do YYYY, h:mm:ss a'),
+          completedTime: moment().format('MMMM Do YYYY, h:mm:ss a'),
+          dueDate: selectedDate.format('MMMM Do YYYY, h:mm:ss a'),
           isCompleted: false
         }
       ]
