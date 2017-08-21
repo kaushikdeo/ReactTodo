@@ -9,12 +9,13 @@ class Todos extends React.Component {
       let timeStamp = completedTime;
       return message + moment.unix(timeStamp).format('Do MMM YYYY @ h:mm a');
     }
-    if (completedTime === null) {
+    if (isCompleted === false) {
       return (
         <div onClick={()=>{
             this.props.toggleCompleted(id)
           }}>
         <label><input checked={isCompleted} type = "checkbox" /></label> . <b>{text}</b>
+        <p>Added On : {this.props.completedTime}</p>
         </div>
       );
     }
@@ -24,6 +25,7 @@ class Todos extends React.Component {
             this.props.toggleCompleted(id)
           }}>
         <p><label><input checked={isCompleted} type = "checkbox" /> </label> .<b>{text}</b></p>
+        <p>Completed On : {this.props.completedTime}</p>
         </div>
       );
     }

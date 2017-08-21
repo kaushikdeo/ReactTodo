@@ -30,13 +30,14 @@ export default class Todo extends React.Component {
   todoSearch(searchText, isChecked) {
     this.setState({showCompleted: isChecked, searchText: searchText.toLowerCase()})
   }
-  addNewTodo(newTodo) {
+  addNewTodo(newTodo, selectedDate) {
+    console.log(selectedDate.format('MMMM Do YYYY, h:mm:ss a'));
     this.setState({
       todos: [
         ...this.state.todos, {
           id: uuid(),
           text: newTodo,
-          completedTime: moment().unix(),
+          completedTime: selectedDate.format('MMMM Do YYYY, h:mm:ss a'),
           isCompleted: false
         }
       ]
@@ -48,9 +49,7 @@ export default class Todo extends React.Component {
     let updatedTodos = this.state.todos.map((todo) => {
       if (todo.id === id) {
         todo.isCompleted = !todo.isCompleted;
-        todo.completedTime = todo.isCompleted
-          ? moment().unix()
-          : undefined;
+        todo.completedTime = moment().format('MMMM Do YYYY, h:mm:ss a');
       }
       return todo;
     })
@@ -62,9 +61,9 @@ export default class Todo extends React.Component {
     return (
       <div className="mainapp col-sm-9 col-xs-12 col-md-6 col-lg-6 col-centered">
         <h3 className="page-title text-center">Todo App</h3>
-        <TodoSearch todoSearch={this.todoSearch}/>
+        <AddTodo addNewTodo={this.addNewTodo} />
         <TodoList todos={filteredTodos} toggleCompleted={this.handleToggle}/>
-        <AddTodo addNewTodo={this.addNewTodo}/>
+        <TodoSearch todoSearch={this.todoSearch}/>
         <p>Created by Kaushik Deo. Git Repository :
           <a href="https://github.com/kaushikdeo/ReactTodo">
             Go To GitHub
