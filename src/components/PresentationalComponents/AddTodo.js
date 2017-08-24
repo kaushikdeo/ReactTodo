@@ -33,8 +33,17 @@ class AddTodo extends React.Component {
         <input type="text" ref={(input) => {this.todoText=input}} className = "form-control" placeholder="What do you want to do today?"/>
         <br />
         <button type="submit" className="btn btn-success">Add Todo</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div className="dropdown">
+          <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Todo Category
+          <span className="caret"></span></button>
+          <ul className="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div className="datepicker">
-              <DatePicker selected={this.state.selectedDate} onChange={this.handleDateChange} withPortal/>
+            <DatePicker selected={this.state.selectedDate} onChange={this.handleDateChange} withPortal/>
         </div>
       </form>
       </div>

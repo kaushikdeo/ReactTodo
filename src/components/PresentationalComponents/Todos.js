@@ -16,6 +16,7 @@ class Todos extends React.Component {
           }}>
         <label><input checked={isCompleted} type = "checkbox" /></label> . <b>{text}</b>
         <p>Added On : {this.props.completedTime}</p>
+        <p>Due Date : {this.props.dueDate}</p>
         <hr className="thin" />
         </div>
       );

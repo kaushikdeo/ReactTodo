@@ -15,6 +15,10 @@ export default class Todo extends React.Component {
     this.todoSearch = this.todoSearch.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.state = {
+      todoLists: {
+        listName: 'Home',
+        listID: 1,
+      },
       accountName: 'Kaushik',
       showCompleted: false,
       searchText: '',
@@ -46,7 +50,6 @@ export default class Todo extends React.Component {
     })
   }
   handleToggle(id) {
-    let now = moment().format('MMMM Do YYYY, h:mm:ss a');
     let updatedTodos = this.state.todos.map((todo) => {
       if (todo.id === id) {
         todo.isCompleted = !todo.isCompleted;
