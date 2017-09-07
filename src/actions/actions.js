@@ -6,7 +6,7 @@ export let setSearchText = (searchText) => {
 };
 
 
-export let addTodo = (text) => {
+export let addTodo = (text, selectedDate) => {
   return{
     type: 'ADD_TODO',
     text

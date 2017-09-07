@@ -6,6 +6,9 @@ import {BrowserRouter, Match, Miss} from 'react-router';
 import Todo from './components/ContainerComponents/Todo';
 import NotFound from './components/NotFound';
 
+let actions = require('./actions/actions.js');
+let store = require('../store/configureStore.js');
+
 
 
 const Root = () => {

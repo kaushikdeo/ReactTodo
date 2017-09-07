@@ -35,7 +35,6 @@ export default class Todo extends React.Component {
     this.setState({showCompleted: isChecked, searchText: searchText.toLowerCase()})
   }
   addNewTodo(newTodo, selectedDate) {
-    console.log(selectedDate.format('MMMM Do YYYY, h:mm:ss a'));
     this.setState({
       todos: [
         ...this.state.todos, {

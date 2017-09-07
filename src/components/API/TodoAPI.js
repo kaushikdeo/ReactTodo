@@ -1,4 +1,3 @@
-
 module.exports = {
   setTodos :function(todos){
     if (Array.isArray(todos)){
@@ -28,9 +27,7 @@ module.exports = {
    filterTodos: function(todos, showCompleted,  searchText) {
      let filteredTodos = todos;
      //filter by showCompleted
-     filteredTodos = filteredTodos.filter((todo)=>{
-       return !todo.isCompleted || showCompleted;
-     });
+     filteredTodos = filteredTodos.filter((todo)=>!todo.isCompleted || showCompleted);
      //filter by searchText
      filteredTodos = filteredTodos.filter((todo)=>{
        let text = todo.text.toLowerCase()
